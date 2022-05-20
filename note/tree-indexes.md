@@ -1,6 +1,6 @@
 # Tree Indexes
 
-~~噩梦 B+ Tree 要来了。~~&#x20;
+~~噩梦 B+ Tree 要来了。~~
 
 本节主要介绍 Table Indexes 的最常见数据结构：B+ Tree。
 
@@ -98,4 +98,8 @@ key 都没啥变化，主要是 value 会在 leaf node 上有不同。
 #### Pointer Swizzling
 
 Nodes 使用 page id 来存储其它 nodes 的引用，DBMS 每次需要首先从 page table 中获取对应的内存地址，然后才能获取相应的 nodes 本身，如果 page 已经在 buffer pool 中，我们可以直接存储其它 page 在 buffer pool 中的内存地址作为引用，从而提高访问效率。感觉没啥必要的优化。
+
+### Duplicate Keys
+
+
 
