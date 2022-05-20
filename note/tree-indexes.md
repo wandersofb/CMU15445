@@ -99,7 +99,20 @@ key 都没啥变化，主要是 value 会在 leaf node 上有不同。
 
 Nodes 使用 page id 来存储其它 nodes 的引用，DBMS 每次需要首先从 page table 中获取对应的内存地址，然后才能获取相应的 nodes 本身，如果 page 已经在 buffer pool 中，我们可以直接存储其它 page 在 buffer pool 中的内存地址作为引用，从而提高访问效率。感觉没啥必要的优化。
 
-### Duplicate Keys
+### Additional Index Usage
 
+#### Implicit Indexes
+DBMS 会自动创建索引来增强完整性约数（integrity constraints），包括：Primary Keys、Unique Constraints。
 
+#### Partial Indexes
+只针对表的部分建立 index，有效减少 index 的大小和维护成本。
 
+#### Covering Indexes
+如果某次 query 是 index 的子集，那么 query 不用去获取 tuple，直接完成 query。
+甚至可以在创建索引的时候 include 某个列，这样会存储在 leaf node，方便 query。
+
+#### Functional/Expression Indexes
+ndex 中的 key 不一定是 column 中的原始值，也可以是通过计算得到的值。
+
+### trie / radix tree
+这就不多说了，也用不上。

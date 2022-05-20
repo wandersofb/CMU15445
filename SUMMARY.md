@@ -14,7 +14,3 @@
 * [Buffer Pools](note/buffer-pools.md)
 * [Hash Tables](note/hash-tables.md)
 * [Tree Indexes](note/tree-indexes.md)
-
-## test
-
-* [demo](test/demo.md)
