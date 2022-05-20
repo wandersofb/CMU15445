@@ -8,9 +8,13 @@
 * [lab1](lab/lab1.md)
 * [lab2](lab/lab2.md)
 
-## NOTE
+## note
 
 * [Database Storage](note/database-storage.md)
 * [Buffer Pools](note/buffer-pools.md)
 * [Hash Tables](note/hash-tables.md)
 * [Tree Indexes](note/tree-indexes.md)
+
+## test
+
+* [demo](test/demo.md)
