@@ -16,3 +16,4 @@
 * [Tree Indexes](note/tree-indexes.md)
 * [Index Concurrency Control](note/index-concurrency-control.md)
 * [Sorting & Aggregations](note/sorting-and-aggregations.md)
+* [Join Algorithms](note/join-algorithms.md)
