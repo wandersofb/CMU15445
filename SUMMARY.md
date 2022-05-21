@@ -15,3 +15,4 @@
 * [Hash Tables](note/hash-tables.md)
 * [Tree Indexes](note/tree-indexes.md)
 * [Index Concurrency Control](note/index-concurrency-control.md)
+* [Sorting & Aggregations](note/sorting-and-aggregations.md)
