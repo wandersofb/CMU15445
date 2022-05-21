@@ -49,7 +49,7 @@ key 都没啥变化，主要是 value 会在 leaf node 上有不同。
 
 #### Clustered Indexes
 
-通俗的说，就是表按照主键排序而存储。
+通俗的说，就是表按照主键排序而存储，其顺序和其磁盘顺序一致。
 
 ### B+ Tree Design Choices
 
