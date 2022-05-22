@@ -99,9 +99,9 @@ Probe Phase Cost: $$(M + N)$$
 
 | Algorithm |IO Cost | Example                          |
 |-----------|--------|----------------------------------|
-| Simple Nested Loop Join | $$M + (m ∙ N)$$ | 1.3 hours     |
-| Block Nested Loop Join | $$M + (M ∙ N) 50$$ | seconds     |
-| Index Nested Loop Join | $$M + (M ∙ log N)$$ | 20 seconds |
+| Simple Nested Loop Join | $$M + (m * N)$$ | 1.3 hours     |
+| Block Nested Loop Join | $$M + (M * N) 50$$ | seconds     |
+| Index Nested Loop Join | $$M + (M * log N)$$ | 20 seconds |
 | Sort-Merge Join | $$M + N + (sort cost)$$ | 0.59 seconds  |
 | Hash Join | $$3(M + N)$$ | 0.45 seconds                   |
 
