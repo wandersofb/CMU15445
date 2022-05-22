@@ -17,4 +17,4 @@
 * [Index Concurrency Control](note/index-concurrency-control.md)
 * [Sorting & Aggregations](note/sorting-and-aggregations.md)
 * [Join Algorithms](note/join-algorithms.md)
-* [Query Planning & Optimization](note/query-planning-and-optimization.md)
+* [Query Execution](note/query-planning-and-optimization.md)
