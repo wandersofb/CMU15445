@@ -1,2 +1,0 @@
-# Query Planning & Optimization
-
