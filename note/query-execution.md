@@ -85,9 +85,88 @@ DBMS 可以在 index 中找到 query 需要的 tuples。
 * 运算符插入从子运算符传入的任何元组。
 
 #### Halloween Problem
-Halloween Problem 是 update 操作会改变 tuples 的物理结构，会造成 scan operator 对于访问 多次同一个 tuple，这会出现在聚簇索引和索引扫描上。
+Halloween Problem 是 update 操作会改变 tuples 的物理结构，会
+造成 scan operator 对于访问 多次同一个 tuple，这会出现在聚簇索引和索引扫描上。
 
 ### Expression Evaluation
 
 DBMS 会用一棵树来表示一个 where 语句，但是这样效率太低了，通常会直接比较（JIT compilation）。
+
+### Parallel vs Distributed Databases
+
+* **Parallel DBMS** 在并行 DBMS 中，计算机资源是物理上紧密相连的，结点上的交流是高速互动的。可以假设资源之间的交流不仅快而且便宜，可靠。
+* **Distributed DBMS** 在分布式 DBMS 中，计算机资源之间相隔很远，这意味着数据可能分布在世界各地，结果就是资源交流会在一个很慢的交互。这些交流就是昂贵且缓慢的。
+
+###  Process Models
+
+DBMS process models 是系统如何架构来支持多用户并发需求。
+
+Worker 是一个 DBMS 组件，它会代表用户执行任务并返回结果。
+
+#### Process per Worker
+
+每个 worker 是一个进程。
+* 依赖于 OS scheduler
+* 对于全局数据机构使用共享内存
+* 单个进程 crash 不会摧毁整个进程
+
+#### Process Pool
+
+Worker 使用免费的 process 从进程池中。
+
+* 仍然依赖于 OS scheduler 和共享内存。
+* 对 cache locality 不友好
+  
+#### Thread per Worker
+
+多线程架构
+
+* DBMS 管理自己 scheduling
+* 可能不会使用 dispatcher
+* thread crash 可能会摧毁整个 DBMS
+
+更多的优势：
+* 更少的工作量的上下文切换
+* 不用管理共享内存
+
+### Inter-Query Parallelism
+
+Inter-Query 是并行的执行不同的查询。
+
+* 允许同时的执行许多的查询可以提升整体的性能
+* 如果查询仅仅只是 read-only，那么在查询之间需要更少的协调。
+* 如果有多个线程要更新数据，这是很难正确的。
+
+### Intra-Query Parallelism
+
+Intra-Query 是在单个查询中多线程执行。
+
+Intra-Query parallelism 的结构可以理解为 **生产者消费者模型**，每个操作是数据的生产者同时也是来自其下方操作的消费者。
+
+#### Intra-Operator Parallelism (Horizontal)
+
+将数据拆分成独立的子集，对每个子集并行执行相应的操作，最后通过 exchange 操作将多个子集的结果合并成最终结果。
+
+#### Inter-Operator Parallelism (Vertical)
+
+简单来说就是 operator 串行为流水线，无需等待。
+
+#### Bushy Parallelism
+
+这是对之前两个办法的混合，即会多线程执行 operator，也会把 operator 串行为流水线。
+
+### I/O Parallelism
+
+* Multiple Disks per Database
+* One Database per Disk
+* One Relation per Disk
+* Split Relation across Multiple Disks
+
+#### Multi-Disk Parallelism
+
+配置 OS/hardware 存储 DBMS 文件道多个存储设备上。
+* 存储设备
+* RAID
+
+#### Database Partitioning
 
