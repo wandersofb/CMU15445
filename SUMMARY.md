@@ -18,3 +18,4 @@
 * [Sorting & Aggregations](note/sorting-and-aggregations.md)
 * [Join Algorithms](note/join-algorithms.md)
 * [Query Execution](note/query-execution.md)
+* [Query Planning & Optimization](note/query-planning-and-optimization.md)
