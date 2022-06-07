@@ -21,3 +21,4 @@
 * [Query Execution](note/query-execution.md)
 * [Query Planning & Optimization](note/query-planning-and-optimization.md)
 * [Concurrency Control Theory](note/concurrency-control-theory.md)
+* [Two-Phase Locking Concurrency Control](note/two-phase-locking-concurrency-control.md)
