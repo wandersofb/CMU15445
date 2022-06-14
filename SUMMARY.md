@@ -24,3 +24,4 @@
 * [Two-Phase Locking Concurrency Control](note/two-phase-locking-concurrency-control.md)
 * [Timestamp Ordering Concurrency Control](note/timestamp-ordering-concurrency-control.md)
 * [Multi-Version Concurrency Control](note/multi-version-concurrency-control.md)
+* [Logging Protocols + Schemes](note/logging-protocols-+-schemes.md)
