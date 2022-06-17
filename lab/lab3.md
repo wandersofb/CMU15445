@@ -20,7 +20,7 @@ lab3 要依据火山模型，实现众多的 executors，代码量还是挺多�
 
 ### DELETE
 
-* 删除和更新一样，标记删除，更新 indexs即可。
+* 删除和更新一样，标记删除，更新 indexs 即可。
 
 ### NESTED LOOP JOIN
 
@@ -44,7 +44,7 @@ lab3 要依据火山模型，实现众多的 executors，代码量还是挺多�
 
 ### LIMIT
 
-* 限制是限制输出的 tulpes 个数，记个数即可
+* 限制是限制输出的 tuples 个数，记个数即可
 
 ### DISTINCT
 
@@ -54,5 +54,4 @@ lab3 要依据火山模型，实现众多的 executors，代码量还是挺多�
 ### Hints
 * 注意头文件
 * 注意 `abstract_expression` 和 `colum->GetExpr`，往往在计算 output tuples 是有用。
-* 要循环整个表才能找到完整表的手，中途需要一个 vector 来记录结果。
 * 注意右值引用，往往需要 std::move() 进行转化。
