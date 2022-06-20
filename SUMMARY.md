@@ -8,6 +8,7 @@
 * [lab1](lab/lab1.md)
 * [lab2](lab/lab2.md)
 * [lab3](lab/lab3.md)
+* [lab4](lab/lab4.md)
 
 ## note
 
