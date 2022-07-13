@@ -32,7 +32,13 @@ Repeatable read：读加 shared lock， 写加 exclusive lock，遵守 2PL 规�
 
 简单的来说就是 **老事务伤害新事务，新事务等待老事务**。Wound-wait 想要到达一种什么效果那？就是 tuples 的请求队列中授予锁的顺序是 older-younger 的。
 
-具体来说： For shared lock, abort all the younger exclusive lock requests before the request by the current txn. For write lock, abort all the younger requests before the request by the current txn. For upgrade lock, abort all the younger but granted requests before the request by the current txn.
+具体来说：&#x20;
+
+For shared lock, abort all the younger exclusive lock requests before the request by the current txn.&#x20;
+
+For write lock, abort all the younger requests before the request by the current txn.&#x20;
+
+For upgrade lock, abort all the younger but granted requests before the request by the current txn.
 
 ![](../.gitbook/assets/wound-wait-exclusive.png)
 
