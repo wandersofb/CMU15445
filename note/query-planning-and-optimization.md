@@ -47,22 +47,26 @@ $$
 
 谓词的选择性（selectivity）是满足的 tuples 的分数。
 
-对于常数查询
+对于常数查询:
+
 $$
 sel(A = constant) = {SC(P) \over V(A,R)}
 $$
 
 对于范围查询：
+
 $$
 sel(A >= a) = (A_{max} - {a / {(A_{max} - A_{min})}})
 $$
 
 对于否定查询：
+
 $$
 sel(notP) = 1 - sel(P)
 $$
 
 对于关联查询：
+
 $$
 sel(P1 \land P2) = sel(P1) * sel(P2)
 $$
